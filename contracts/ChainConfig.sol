@@ -87,9 +87,15 @@ contract ChainConfig is InjectorContextHolder, IChainConfig {
         emit MinValidatorStakeAmountChanged(0, minValidatorStakeAmount);
         _consensusParams.minStakingAmount = minStakingAmount;
         emit MinStakingAmountChanged(0, minStakingAmount);
-
+        _consensusParams.jdnWalletAddress = 0x5266Dfa5ae013674f8FdC832b7c601B838D94eE6; // hw1
+        emit JdnWalletAddressChanged(0x0000000000000000000000000000000000000000, 0x5266Dfa5ae013674f8FdC832b7c601B838D94eE6);
+        _consensusParams.vatWalletAddress = 0xC3317062E170f5794825dC5D93D6b045f06Bf3a5; // hw2
+        emit VatWalletAddressChanged(0x0000000000000000000000000000000000000000, 0xC3317062E170f5794825dC5D93D6b045f06Bf3a5);
+        _consensusParams.whtWalletAddress = 0xAC5675D47B1Cd43C836dF6014D86B70B06173542; // hw3
+        emit WhtWalletAddressChanged(0x0000000000000000000000000000000000000000, 0xAC5675D47B1Cd43C836dF6014D86B70B06173542);
+        _consensusParams.minTotalDelegatedAmount = 1000000000000000000000000;
         _consensusParams.splitPercent = SplitPercent(3300, 670, 6030); // 33%, 6.7%, 60.3%
-        _consensusParams.taxPercent = TaxPercent(700, 300, 1500); // 7%, 3%, 15%
+        _consensusParams.taxPercent = TaxPercent(654, 300, 1500); // 7%, 3%, 15%
     }
 
     function getActiveValidatorsLength() external view override returns (uint32) {

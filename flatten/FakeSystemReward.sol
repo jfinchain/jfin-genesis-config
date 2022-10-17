@@ -471,7 +471,7 @@ contract Multicall {
 // pragma solidity ^0.8.0;
 
 interface IChainConfig {
-
+    
     struct SplitPercent {
         uint32 jdn;
         uint32 validator;
@@ -515,7 +515,7 @@ interface IChainConfig {
     function getMinStakingAmount() external view returns (uint256);
 
     function setMinStakingAmount(uint256 newValue) external;
-
+    
     function getMinTotalDelegatedAmount() external view returns (uint256);
 
     function setMinTotalDelegatedAmount(uint256 newValue) external;
@@ -630,8 +630,6 @@ interface IStaking is IValidatorSet {
 
     function getValidatorByOwner(address owner) external view returns (address);
 
-    function registerValidator(address validator, uint16 commissionRate) payable external;
-
     function addValidator(address validator) external;
 
     function removeValidator(address validator) external;
@@ -641,10 +639,6 @@ interface IStaking is IValidatorSet {
     function disableValidator(address validator) external;
 
     function releaseValidatorFromJail(address validator) external;
-
-    function changeValidatorCommissionRate(address validator, uint16 commissionRate) external;
-
-    function changeValidatorOwner(address validator, address newOwner) external;
 
     function getValidatorDelegation(address validator, address delegator) external view returns (
         uint256 delegatedAmount,
